@@ -8,5 +8,5 @@ if %ERRORLEVEL%==0 goto :EOF
 
 REM Non admin users running explorer.exe will not pass
 REM Using findstr.exe is needed as tasklist.exe wont return the correct ERRORLEVEL
-tasklist /V /FI "IMAGENAME eq explorer.exe" /fi "username eq %userdomain%\%username%"|findstr %username% >nul
+tasklist /V /FI "IMAGENAME eq explorer.exe" /fi "USERNAME eq %USERDOMAIN%\%USERNAME%"|findstr %USERNAME% >nul
 if %ERRORLEVEL%==0 logoff
